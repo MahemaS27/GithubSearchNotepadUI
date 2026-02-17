@@ -48,6 +48,7 @@ export function useGithubSearch(query: string) {
             else{
                 const result:GithubRepoSearchResponse = await response.json()
                 setData(result.items)
+                setLoading(false)
             }
         } catch (error){
             console.log(error)

@@ -23,8 +23,8 @@ export function useRepoDetails(owner:string, repoName:string){
                     setError(`Error on fetching repo: ${response.status}`)
                 } else{
                     const result = await response.json()
-                    console.log(result)
                     setData(result as Repository)
+                    setLoading(false)
                 }
 
 
