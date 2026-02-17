@@ -21,7 +21,12 @@ export default function Details() {
   } else if (repoData.data) {
     return (
       <div className="flex flex-col gap-1">
-        <h1>{repoData.data.name}</h1>
+        <Link href={repoData.data.html_url}>
+          <div className="flex gap-1">
+            <h1 className="">{repoData.data.name}</h1>
+            <h1>{"->"}</h1>
+          </div>
+        </Link>
         <p className=" text-gray-500 italic">{repoData.data.description}</p>
         <h3 className="text-lg">Contributors:</h3>
         <div className="grid grid-flow-col grid-rows-6 gap-4">
