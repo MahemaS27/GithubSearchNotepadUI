@@ -18,6 +18,7 @@ export function SearchBar({ onSearch }: SearchBarProps) {
   return (
     <input
       type="text"
+      aria-label="input-for-repo-search"
       className="border-2 border-solid p-1 rounded-sm lex flex-col gap-1 w-full"
       placeholder="Search for a Repository.."
       onChange={(e) => setValue(e.target.value)}

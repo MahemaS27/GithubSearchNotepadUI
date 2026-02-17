@@ -21,7 +21,11 @@ export default function Details() {
   } else if (repoData.data) {
     return (
       <div className="flex flex-col gap-1">
-        <Link href={repoData.data.html_url}>
+        <Link
+          href={repoData.data.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="flex gap-1">
             <h1 className="">{repoData.data.name}</h1>
             <h1>{"->"}</h1>
@@ -30,15 +34,13 @@ export default function Details() {
         <p className=" text-gray-500 italic">{repoData.data.description}</p>
         <h3 className="text-lg">Contributors:</h3>
         <div className="grid grid-flow-col grid-rows-6 gap-4">
-          {contributorsData.data?.map((contributor) => {
-            return (
-              <Link key={contributor.id} href={contributor.html_url}>
-                <div className="border rounded-lg hover:bg-gray-800 transition-colors cursor-pointer p-5">
-                  {contributor.login}
-                </div>
-              </Link>
-            );
-          })}
+          {contributorsData.data?.map((contributor) => (
+            <Link key={contributor.id} href={contributor.html_url}>
+              <div className="border rounded-lg hover:bg-gray-800 transition-colors cursor-pointer p-5">
+                {contributor.login}
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     );

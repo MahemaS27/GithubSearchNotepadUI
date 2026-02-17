@@ -4,12 +4,20 @@ import { useState } from "react";
 import { Repository, useGithubSearch } from "./hooks/useGithubSearch";
 import { SearchResultCard } from "./components/SearchResultCard";
 import { SearchBar } from "./components/SearchBar";
+import { usePracticePostRequest } from "./hooks/usePracticePostRequest";
 
 export default function Home() {
   const [query, setQuery] = useState<string>("Mahema");
 
   // call the API when the query changes debounced
   const searchData = useGithubSearch(query);
+  const postData = usePracticePostRequest(
+    "Mahema's Post Practice",
+    "I need to practice this for my interview",
+    3,
+  );
+
+  console.log(postData);
 
   return (
     <main>
