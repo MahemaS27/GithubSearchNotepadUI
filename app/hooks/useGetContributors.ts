@@ -3,12 +3,12 @@ import { useEffect, useState } from "react"
 export type Contributor ={
     login: string
     id: number
-    url: string
+    html_url: string
     contributions: number
 }
 
 export function useGetContributors(owner:string, repoName:string){
-    const [data, setData] = useState<Contributor|undefined>()
+    const [data, setData] = useState<Contributor[]|undefined>([])
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string | undefined>(undefined)
 
