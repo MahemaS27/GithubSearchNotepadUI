@@ -18,8 +18,7 @@ export default function Details() {
     ownerID as string,
     repoID as string,
   );
-  console.log(repoData);
-  console.log(contributorsData);
+
   if (repoData.loading) {
     return <Loading />;
   } else if (repoData.data) {

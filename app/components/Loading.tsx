@@ -1,3 +1,8 @@
-export function Loading() {
-  return <div>Loading page...please wait</div>;
+interface LoadingProps {
+  loadingMessage?: string;
+}
+export function Loading({
+  loadingMessage = "Loading please wait",
+}: LoadingProps) {
+  return <div>{loadingMessage}</div>;
 }
