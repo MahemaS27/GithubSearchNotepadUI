@@ -14,6 +14,7 @@ export function SearchResultCard({ repository }: SearchResultCardProps) {
   const handleNavigationToDetails = (repoID: string, ownerID: string) => {
     router.push(`/details/${ownerID}/${repoID}`);
   };
+
   return (
     <div
       className="border p-4 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer"
